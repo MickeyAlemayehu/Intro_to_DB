@@ -5,7 +5,6 @@ If the database already exists, the script will not fail.
 """
 
 import mysql.connector
-from mysql.connector import Error
 
 def create_database():
     """
@@ -37,7 +36,7 @@ def create_database():
             # Close cursor
             cursor.close()
             
-    except Error as e:
+    except mysql.connector.Error as e:
         # Handle connection and other database errors
         print(f"Error connecting to MySQL: {e}")
         
